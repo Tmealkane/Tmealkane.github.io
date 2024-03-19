@@ -46,7 +46,8 @@
     cur_page_show.src = "htmlfiles/photos.html";
   }
   function on_change_language_click(){
-    if (window.location.href == "https://bookerbug.gitee.io"){
+    if (window.location.href == "https://bookerbug.gitee.io/"){
+      console.log("Yes");
       location.assign("https://bookerbug.github.io");
     }else{
       location.assign("https://bookerbug.gitee.io");
