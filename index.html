@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="images/icon.png">
+  <link rel="stylesheet" href="css/dropdown.css">
+  <title data-sw-translate>bookerbug's home</title>
+  <script>
+    var Browser_Agent = navigator.userAgent;
+    // 浏览器为IE的情况 
+    if (Browser_Agent.indexOf(" MSIE ") != - 1) {
+      var a = navigator.browserLanguage;
+      if (a != " zh-cn ") {
+        // 英文网站
+        location.assign("https://bookerbug.github.io/");
+      }
+    }
+    // 浏览器非IE的情况 
+    else {
+      var b = navigator.language;
+      console.log(window.location.href);
+      if (window.location.href == "https://bookerbug.gitee.io") {
+        if (b != "zh-CN") {
+          // 英文网站
+          location.assign("https://bookerbug.github.io/");
+        }
+      } else {
+        console.log("Yes");
+        if (b == "zh-CN") {
+          // 中文网站
+          console.log("Jump");
+          //location.assign("https://bookerbug.gitee.io/");
+        }
+      }
+    }
+  </script>
+</head>
+<script>
+  function on_about_me_click() {
+    var cur_page_show = document.getElementById("cur_page_show");
+    cur_page_show.src = "htmlfiles/aboutme/index.html";
+  }
+  function on_photos_click() {
+    var cur_page_show = document.getElementById("cur_page_show");
+    cur_page_show.src = "htmlfiles/photos.html";
+  }
+  function on_change_language_click(){
+    if (window.location.href == "https://bookerbug.gitee.io"){
+      location.assign("https://bookerbug.github.io");
+    }else{
+      location.assign("https://bookerbug.gitee.io");
+    }
+  }
+</script>
+<script src="http://libs.baidu.com/jquery/1.8.1/jquery.min.js"></script>
+<script src="./zh-cn.bilingualism.js"></script>
+
+<body>
+  <ul>
+    <li class="head"><a onclick="location.reload(true)">
+        <img src="images/icon.png" alt="布客虫的博客" width="64" height="64">
+      </a></li>
+    <li class="tag">
+      <a href="#" data-sw-translate>Blogs</a>
+      <ul class="dropdown">
+        <li><a target="_blank" href="https://www.cnblogs.com/bookerbug/" data-sw-translate>CnBlogs</a></li>
+        <li><a target="_blank" href="https://space.bilibili.com/1807678696/article" data-sw-translate>Bilibili</a></li>
+        <li><a target="_blank" href="https://www.zhihu.com/people/89-48-61-67" data-sw-translate>Zhihu</a></li>
+      </ul>
+    </li>
+    <li class="tag"><a href="https://space.bilibili.com/1807678696/video" target="_blank" data-sw-translate>Videos</a>
+    </li>
+    <li class="tag"><a href="#" onclick="on_photos_click()" target="_self" data-sw-translate>Photos</a></li>
+    <li class="tag"><a href="#" onclick="on_about_me_click()" data-sw-translate>About Me</a></li>
+    <li class="tag"><a href="#" onclick="on_change_language_click()" data-sw-translate>简体中文</a></li>
+  </ul>
+  <iframe loading="lazy" src="htmlfiles/homepage/index.html" width="100%" height="1000px" id="cur_page_show"></iframe>
+  <script type="text/javascript" src="javascripts/language.js"></script>
+</body>
+
+</html>
