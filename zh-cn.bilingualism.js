@@ -63,6 +63,8 @@ window.SwaggerTranslator.learn({
 });
 
 
-$(function () {
-    window.SwaggerTranslator.translate();
-});
+// function on_change_language_click(){
+//     window.SwaggerTranslator.translate();
+// }
+
+
