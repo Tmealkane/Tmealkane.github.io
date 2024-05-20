@@ -6,47 +6,36 @@
   <link rel="icon" href="images/icon.png">
   <link rel="stylesheet" href="css/dropdown.css">
   <title data-sw-translate id="titile">bookerbug's home</title>
-  <!-- <script>
+  <script>
     var Browser_Agent = navigator.userAgent;
     // 浏览器为IE的情况 
     if (Browser_Agent.indexOf(" MSIE ") != - 1) {
       var a = navigator.browserLanguage;
-      if (a != " zh-cn ") {
-        // 英文网站
-        location.assign("https://bookerbug.github.io/");
-      }
+      cur_language = a;
+
+      console.log(cur_language);
     }
     // 浏览器非IE的情况 
     else {
       var b = navigator.language;
-      console.log(window.location.href);
-      if (window.location.href == "https://bookerbug.gitee.io") {
-        if (b != "zh-CN") {
-          // 英文网站
-          location.assign("https://bookerbug.github.io/");
-        }
-      } else {
-        console.log("Yes");
-        if (b == "zh-CN") {
-          // 中文网站
-          console.log("Jump");
-          //location.assign("https://bookerbug.gitee.io/");
-        }
+      console.log(b);
+      if (b == "zh-CN") {
+        cur_language = "zh";
+        window.SwaggerTranslator.translate();
       }
     }
-  </script> -->
+  </script>
 </head>
 <script>
   var cur_language = "en";
   function on_change_language_click() {
       window.SwaggerTranslator.translate();
       if (cur_language == "zh") {
-          location.reload(true);
+          location.reload(false);
           cur_language = "en"
       } else {
           cur_language = "zh"
       }
-      console.log(cur_language);
   }
   function on_about_me_click() {
     var cur_page_show = document.getElementById("cur_page_show");
